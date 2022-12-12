@@ -5,30 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EPICODE Benchmark</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <div id="epicodeLogo"></div>
+    <div class="epicodeLogo">
+        <img src="assets/epicode_logo.png" alt="EPICODE Logo">
+    </div>
 
     <div id="container">
-        <h1>Welcome to <span style="font-weight: bolder">your exam</span></h1>
+        <h1>Welcome to your exam</h1>
 
         <div id="instructions">
             <h2>Instructions</h2>
             <p>We don't expect most engineers to know the answers to all of these questions, so don't worry if you're unsure of a few of them.</p>
             <ul>
-                <li>Each question is <span style="font-weight: bolder">timed</span> and can only be <span style="font-weight: bolder">answered once</span>.</li>
-                <li>Changing browser tab or opening other windows will <span style="font-weight: bolder">invalidate the question</span>.</li>
-                <li>This exam will take approx. <span style="font-weight: bolder">0-5 minutes</span>.</li>
+                <li>Each question is timed and can only be answered once.</li>
+                <li>Changing browser tab or opening other windows will invalidate the question.</li>
+                <li>This exam will take approx. 0-5 minutes.</li>
             </ul>
         </div>
 
         <div id="promise">
+            <input type="checkbox" name="Checkbox" id="checkbox">
             <p>I promise to answer myself without help from anyone</p>
         </div>
 
-        <div id="button">
+        <div class="button">
             <button>PROCEED</button>
         </div>
 
