@@ -140,7 +140,7 @@ button {
 
 .elements-container {
   width: 40%;
-  margin-top: 30px;
+  margin-top: 100px;
   margin-inline: auto;
   position: relative;
   text-align: center;
@@ -174,7 +174,12 @@ button {
   width: 40%;
   color: #d20094;
   border: 0;
-  border-bottom:1px solid;
+  border-bottom: 1px solid;
+}
+
+.text-input-container input:focus {
+  outline: none;
+  font-family: inherit;
 }
 
 #feedback {
@@ -187,5 +192,5 @@ button {
 
 .button-section {
   text-align: center;
-  margin-top: 3%;
+  margin-top: 5%;
 }
