@@ -58,6 +58,7 @@ ul {
   top: 560px;
   right: 200px;
 }
+
 button {
   color: black;
   font-family: Outfit;
@@ -69,6 +70,7 @@ button {
   box-shadow: 0px 0px 39px -6px rgba(0, 255, 255, 1);
   cursor: pointer;
 }
+
 #checkbox {
   position: absolute;
   overflow: hidden;
@@ -79,12 +81,14 @@ button {
   padding: 0;
   border: 0;
 }
+
 #inputPreview {
   display: flex;
   gap: 20px;
   justify-content: center;
 }
-#checkbox + label {
+
+#checkbox+label {
   position: relative;
   font-size: 14px;
   cursor: pointer;
@@ -93,7 +97,8 @@ button {
   height: 24px;
   color: white;
 }
-#checkbox + label::before {
+
+#checkbox+label::before {
   content: " ";
   display: inline-block;
   vertical-align: middle;
@@ -108,7 +113,8 @@ button {
   box-shadow: none;
   margin-right: 20px;
 }
-#checkbox:checked + label::after {
+
+#checkbox:checked+label::after {
   content: " ";
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+");
   background-repeat: no-repeat;
