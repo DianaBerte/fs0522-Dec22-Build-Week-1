@@ -1,3 +1,5 @@
+/*Welcome Page*/
+
 body {
   background-image: url("assets/bg.jpg");
   background-size: cover;
@@ -132,4 +134,58 @@ button {
   font-size: 10px;
   height: 24px;
   width: 24px;
+}
+
+/*Feedback Page*/
+
+.elements-container {
+  width: 40%;
+  margin-top: 30px;
+  margin-inline: auto;
+  position: relative;
+  text-align: center;
+}
+
+.elements-container h2 {
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+}
+
+.elements-container h3 {
+  font-weight: lighter;
+  line-height: 1.2;
+}
+
+.leave-us-feedback {
+  text-align: center;
+}
+
+.leave-us-feedback h3 {
+  font-weight: lighter;
+  margin-top: 10%;
+}
+
+.text-input-container {
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 2%;
+  width: 40%;
+  color: #d20094;
+  border: 0;
+  border-bottom:1px solid;
+}
+
+#feedback {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  color: white;
+  margin-bottom: 1%;
+}
+
+.button-section {
+  text-align: center;
+  margin-top: 3%;
 }
