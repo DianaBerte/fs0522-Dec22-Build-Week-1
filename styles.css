@@ -137,48 +137,58 @@ button {
 }
 
 
-/*Feedback Page*/ 
+/*Feedback Page*/
 
 .rate {
   margin-top: 5%;
+  margin-left: 18%;
   margin-right: 18%;
   height: 46px;
   padding: 0 10px;
+  height: 95px;
+  width: 50%;
+  margin-inline: auto;
 }
-.rate:not(:checked) > input {
-  position:absolute;
-  top:-9999px;
+
+.rate:not(:checked)>input {
+  position: absolute;
+  top: -9999px;
 }
-.rate:not(:checked) > label {
-  float:right;
-  width:1em;
-  overflow:hidden;
-  white-space:nowrap;
-  cursor:pointer;
-  font-size:70px;
-  color:#ccc;
+
+.rate:not(:checked)>label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 60px;
+  color: #ccc;
 }
-.rate:not(:checked) > label:before {
+
+.rate:not(:checked)>label:before {
   content: "★";
 }
-.rate > input:checked ~ label {
-  color: #00FFFF;    
+
+.rate>input:checked~label {
+  color: #00FFFF;
 }
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-  color:#00FFFF ;  
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+  color: #00FFFF;
 }
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
   color: #00FFFF;
 }
 
 
 .elements-container {
-  width: 40%;
+  width: 50%;
   margin-top: 100px;
   margin-inline: auto;
   position: relative;
@@ -187,13 +197,14 @@ button {
 
 .elements-container h2 {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 45px;
   color: white;
 }
 
 .elements-container h3 {
   font-weight: lighter;
   line-height: 1.2;
+  font-size: 24px;
 }
 
 .leave-us-feedback {
@@ -202,23 +213,18 @@ button {
 
 .leave-us-feedback h3 {
   font-weight: lighter;
-  margin-top: 10%;
+  margin-top: 5%;
+  font-size: 23px;
 }
 
 .text-input-container {
   text-align: center;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-inline: auto;
   margin-top: 2%;
-  width: 40%;
+  width: 50%;
   color: #d20094;
   border: 0;
   border-bottom: 1px solid;
-}
-
-.text-input-container input:focus {
-  outline: none;
-  font-family: inherit;
 }
 
 #feedback {
@@ -226,13 +232,26 @@ button {
   border: none;
   width: 100%;
   color: white;
-  margin-bottom: 1%;
+  font-size: 15px;
+  font-family: inherit;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+#feedback:focus {
+  outline: none;
+  font-family: inherit;
 }
 
 .button-section {
   text-align: center;
   margin-top: 5%;
 }
+
+button {
+  font-weight: 300;
+}
+
 /*Questions Page*/
 
 .question-container {
@@ -252,108 +271,30 @@ button {
 }
 
 .question-container h2 span {
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 .answers-container {
-  width: 100%;
+  width: 80%;
   text-align: center;
-  display: inline-block;
+  margin-inline: auto;
+  margin-top: 20px;
 }
 
-.answers-container .first-answer {
-  display: inline-block;
-  font-size: 15px;
-  width: 20%;
-  text-align: center;
-  border-radius: 50px;
-  margin-bottom: 20px;
-  margin-right: 50px;
-  padding-left: 40px;
-  padding-right: 40px;
-  position: relative;
-  box-shadow: inset 6px 7px 6px -6px white;
-}
-
-.answers-container .first-answer:hover{
-  cursor: pointer;
-  transition: 0s;
-}
-
-.answers-container .first-answer:active{
-  background-color: #d20094;
-}
-
-.answers-container .second-answer {
+.answers-container div {
   display: inline-block;
   font-size: 15px;
   width: 20%;
   text-align: center;
-  border: 1px solid white;
-  border-radius: 50px;
-  margin-bottom: 20px;
-  margin-right: 50px;
-  padding-left: 40px;
-  padding-right: 40px;
+  margin: 20px 40px;
+  padding: 8px 40px;
   position: relative;
-}
-
-.answers-container .second-answer:hover{
+  box-shadow: -4px -4px 5px -2px #ffffff;
+  background-color: rgba(255, 255, 255, 0.118);
+  border-radius: 40px;
   cursor: pointer;
-  transition: 0s;
 }
 
-.answers-container .second-answer:active{
-  background-color: #d20094;
-}
-
-br {
-  display: none;
-}
-
-.answers-container .third-answer {
-  display: inline-block;
-  font-size: 15px;
-  width: 20%;
-  border: 1px solid white;
-  border-radius: 50px;
-  margin-bottom: 20px;
-  margin-right: 50px;
-  padding-left: 40px;
-  padding-right: 40px;
-  position: relative;
-}
-
-.answers-container .third-answer:hover{
-  cursor: pointer;
-  transition: 0s;
-}
-
-.answers-container .third-answer:active{
-  background-color: #d20094;
-}
-
-.answers-container .fourth-answer {
-  display: inline-block;
-  font-size: 15px;
-  width: 20%;
-  border: 1px solid white;
-  border-radius: 50px;
-  margin-bottom: 20px;
-  margin-right: 50px;
-  padding-left: 40px;
-  padding-right: 40px;
-  position: relative;
-}
-
-.answers-container .fourth-answer:hover{
-  cursor: pointer;
-  transition: 0s;
-}
-
-.answers-container .fourth-answer:active{
-  background-color: #d20094;
-}
 
 .button-next {
   text-align: center;
@@ -363,7 +304,7 @@ br {
 .footer {
   width: 100%;
   text-align: center;
-  margin-top: 10%;
+  margin-top: 30px;
   margin-inline: auto;
 }
 
@@ -373,6 +314,11 @@ br {
 
 .clicked-answer {
   background-color: #d20094;
+}
+#bottom-container {
+  position: absolute;
+  top: 530px;
+  right: 530px;
 }
 
 /* RESULTS PAGE */
