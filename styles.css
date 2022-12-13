@@ -317,6 +317,11 @@ br {
   background-color: #d20094;
 }
 
+.button-next {
+  text-align: center;
+  margin-top: 5%;
+}
+
 .footer {
   width: 100%;
   text-align: center;
