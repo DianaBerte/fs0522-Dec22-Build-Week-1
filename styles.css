@@ -203,7 +203,7 @@ button {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 10%;
-  margin-bottom: 5%;
+  margin-bottom: 6%;
   margin-inline: auto;
   position: relative;
 }
@@ -225,6 +225,32 @@ button {
 
 .answers-container .first-answer {
   display: inline-block;
+  font-size: 15px;
+  width: 20%;
+  text-align: center;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  margin-right: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+  box-shadow: inset 6px 7px 6px -6px white;
+}
+
+.answers-container .first-answer:hover{
+  cursor: pointer;
+  transition: 0s;
+}
+
+.answers-container .first-answer:active{
+  background-color: #d20094;
+}
+
+.answers-container .second-answer {
+  display: inline-block;
+  font-size: 15px;
+  width: 20%;
+  text-align: center;
   border: 1px solid white;
   border-radius: 50px;
   margin-bottom: 20px;
@@ -234,15 +260,13 @@ button {
   position: relative;
 }
 
-.answers-container .second-answer {
-  display: inline-block;
-  border: 1px solid white;
-  border-radius: 50px;
-  margin-bottom: 20px;
-  margin-right: 50px;
-  padding-left: 40px;
-  padding-right: 40px;
-  position: relative;
+.answers-container .second-answer:hover{
+  cursor: pointer;
+  transition: 0s;
+}
+
+.answers-container .second-answer:active{
+  background-color: #d20094;
 }
 
 br {
@@ -251,28 +275,53 @@ br {
 
 .answers-container .third-answer {
   display: inline-block;
+  font-size: 15px;
+  width: 20%;
   border: 1px solid white;
   border-radius: 50px;
+  margin-bottom: 20px;
   margin-right: 50px;
   padding-left: 40px;
   padding-right: 40px;
   position: relative;
 }
 
+.answers-container .third-answer:hover{
+  cursor: pointer;
+  transition: 0s;
+}
+
+.answers-container .third-answer:active{
+  background-color: #d20094;
+}
+
 .answers-container .fourth-answer {
   display: inline-block;
+  font-size: 15px;
+  width: 20%;
   border: 1px solid white;
   border-radius: 50px;
+  margin-bottom: 20px;
   margin-right: 50px;
   padding-left: 40px;
   padding-right: 40px;
   position: relative;
+}
+
+.answers-container .fourth-answer:hover{
+  cursor: pointer;
+  transition: 0s;
+}
+
+.answers-container .fourth-answer:active{
+  background-color: #d20094;
 }
 
 .footer {
   width: 100%;
   text-align: center;
   margin-top: 10%;
+  margin-inline: auto;
 }
 
 .footer span {
