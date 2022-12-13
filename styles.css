@@ -371,6 +371,9 @@ br {
   color: #d20094;
 }
 
+.clicked-answer {
+  background-color: #d20094;
+}
 
 /* RESULTS PAGE */
 
