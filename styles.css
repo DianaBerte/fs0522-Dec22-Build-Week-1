@@ -194,3 +194,144 @@ button {
   text-align: center;
   margin-top: 5%;
 }
+
+
+/* RESULTS PAGE */
+
+.results-container {
+  position: relative;
+  text-align: center;
+}
+
+.results-text {
+  width: 60%;
+  margin-inline: auto;
+}
+
+.results-text h1 {
+  font-size: 50px;
+  margin-bottom: 0;
+}
+
+.results-text h3 {
+  margin-top: 0;
+  font-weight: 300;
+}
+
+#results {
+  display: flex;
+}
+
+#chart {
+  display: block;
+  border-radius: 100%;
+  width: 340px;
+  height: 340px;
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(#d20094 0deg 120deg,
+      #00ffff 120deg 360deg);
+  box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+}
+
+#chart::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  /* background: rgb(11, 17, 59); */
+  background-image: url("assets/result.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+}
+
+#correct {
+  position: absolute;
+  top: 200px;
+  left: 150px;
+  text-align: left;
+}
+
+
+#wrong {
+  position: absolute;
+  top: 200px;
+  right: 150px;
+  text-align: right;
+}
+
+.results-container h2 {
+  font-size: 40px;
+  color: white;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.results-container .percentage {
+  font-weight: 500;
+}
+
+.results-container h3 {
+  margin-top: 0;
+  font-weight: 100;
+}
+
+.chart-text {
+  position: absolute;
+  top: 210px;
+  left: 517px;
+  width: 180px;
+}
+
+.passed-text {
+  margin-bottom: 0;
+}
+
+.colored-text {
+  color: #00ffff;
+  margin-top: 0;
+}
+
+.small-text {
+  font-size: 12px;
+  font-family: Inter;
+  width: 180px;
+  font-weight: 100;
+}
+
+.small-text .certificate-text {
+  margin-top: 35px;
+  margin-bottom: 0;
+}
+
+.small-text .email-text {
+  margin-top: 0;
+}
+
+.results-button {
+  position: absolute;
+  top: 600px;
+  left: 495px;
+}
+
+.results-button #rate-button {
+  color: white;
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+#rate-button:hover {
+  box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+  background-color: #00ffff;
+}
