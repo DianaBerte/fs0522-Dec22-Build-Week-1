@@ -195,6 +195,139 @@ button {
   margin-top: 5%;
 }
 
+/*Questions Page*/
+
+.question-container {
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10%;
+  margin-bottom: 6%;
+  margin-inline: auto;
+  position: relative;
+}
+
+.question-container h2 {
+  color: white;
+  font-size: 40px;
+}
+
+.question-container h2 span {
+  font-weight: bold; 
+}
+
+.answers-container {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+.answers-container .first-answer {
+  display: inline-block;
+  font-size: 15px;
+  width: 20%;
+  text-align: center;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  margin-right: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+  box-shadow: inset 6px 7px 6px -6px white;
+}
+
+.answers-container .first-answer:hover{
+  cursor: pointer;
+  transition: 0s;
+}
+
+.answers-container .first-answer:active{
+  background-color: #d20094;
+}
+
+.answers-container .second-answer {
+  display: inline-block;
+  font-size: 15px;
+  width: 20%;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  margin-right: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+}
+
+.answers-container .second-answer:hover{
+  cursor: pointer;
+  transition: 0s;
+}
+
+.answers-container .second-answer:active{
+  background-color: #d20094;
+}
+
+br {
+  display: none;
+}
+
+.answers-container .third-answer {
+  display: inline-block;
+  font-size: 15px;
+  width: 20%;
+  border: 1px solid white;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  margin-right: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+}
+
+.answers-container .third-answer:hover{
+  cursor: pointer;
+  transition: 0s;
+}
+
+.answers-container .third-answer:active{
+  background-color: #d20094;
+}
+
+.answers-container .fourth-answer {
+  display: inline-block;
+  font-size: 15px;
+  width: 20%;
+  border: 1px solid white;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  margin-right: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+}
+
+.answers-container .fourth-answer:hover{
+  cursor: pointer;
+  transition: 0s;
+}
+
+.answers-container .fourth-answer:active{
+  background-color: #d20094;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 10%;
+  margin-inline: auto;
+}
+
+.footer span {
+  color: #d20094;
+}
+
 
 /* RESULTS PAGE */
 
