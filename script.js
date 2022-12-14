@@ -101,14 +101,26 @@ let currentQuestionNumber = 0;
 //2: You can create functions to create every line of the html e.g one for the question, one for the question number at footer, one for the answers etc
 
 const createFooter = function() {
+
   let footerNode = document.getElementsByClassName('footer')[0];
   let newPNode = document.createElement('p');
-  newPNode.innerText = `Question ${currentQuestionNumber+1}/${questions.length}`;
+  newPNode.innerHTML = `<p>Question ${currentQuestionNumber + 1}<span>/${questions.length}</span></p>`;
   footerNode.appendChild(newPNode);
 }
 
+const createNewQuestion = function(currentQuestionObject) {
 
+  currentQuestionObject = questions[currentQuestionNumber];
+  currentQuestion = currentQuestionObject.question;
+
+  let questionNode = document.getElementsByClassName('question-container')[0];
+  let h2Node = document.createElement('h2');
+
+  h2Node.innerText = currentQuestion;
+  h2Node.classList.add('currentQuestion');
+  questionNode.appendChild(h2Node);
+}
 
 //3
 
-//window.onload = onLoadPage;
+//window.onload = onLoadActions;
