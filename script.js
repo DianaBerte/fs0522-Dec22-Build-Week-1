@@ -94,6 +94,8 @@ const questions = [
   },
 ];
 
+// ------------------- WELCOME PAGE ------------------- //
+
 function promiseCheck() {
   let promiseBox = document.getElementById("checkbox");
   if (promiseBox.checked) {
@@ -108,6 +110,57 @@ function promiseCheck() {
   }
 }
 
+// ------------------- FEEDBACK PAGE ------------------- //
+let click = 0;
+let feedbackInputNode = document.getElementById("feedback");
+let titleContainerNode =
+  document.getElementsByClassName("elements-container")[0];
+let starsContainerNode = document.getElementsByClassName("rate")[0];
+
+function generateStars() {
+  starsContainerNode.innerHTML = "";
+  for (let i = 10; i > 0; i--) {
+    starsContainerNode.innerHTML += `<input type="radio" id="star${i}" name="rate" value="${i}" />
+    <label for="star${i}" title="text"></label>`;
+  }
+}
+
+function feedbackChange() {
+  if (feedbackInputNode.value !== "") {
+    click += 1;
+    if (click === 1) {
+      titleContainerNode.innerHTML =
+        "<h2>About your Teacher</h2><h3>From 0 to 10, how do you rate him/her?</h3>";
+      generateStars();
+      document.getElementsByClassName("leave-us-feedback")[0].innerHTML = "";
+      document
+        .getElementsByClassName("main-container")[0]
+        .removeChild(
+          document.getElementsByClassName("text-input-container")[0]
+        );
+    } else if (click === 2) {
+      titleContainerNode.innerHTML =
+        "<h2>About your TA</h2><h3>From 0 to 10, how do you rate him/her?</h3>";
+      generateStars();
+      let buttonNode = document.getElementById("feedback-button");
+      buttonNode.innerHTML = "<b>MORE INFO</b>";
+      document.getElementsByClassName("leave-us-feedback")[0].innerHTML = "";
+      document
+        .getElementsByClassName("main-container")[0]
+        .removeChild(
+          document.getElementsByClassName("text-input-container")[0]
+        );
+    } else if (click === 3) {
+      let aNode = document.getElementsByTagName("a")[0];
+      aNode.href = "https://epicode.com/en/";
+    }
+  } else {
+    feedbackInputNode.placeholder = "* Please write a comment here";
+    feedbackInputNode.classList.add("change-color");
+  }
+}
+
+// ------------------- QUESTION PAGE ------------------- //
 //1
 let userScore= 0;
 let userAnswer = "";
@@ -115,26 +168,25 @@ let currentQuestionNumber = 0;
 
 //2: You can create functions to create every line of the html e.g one for the question, one for the question number at footer, one for the answers etc
 
-const createFooter = function() {
-
-  let footerNode = document.getElementsByClassName('footer')[0];
-  let newPNode = document.createElement('p');
-  newPNode.innerHTML = `<p>Question ${currentQuestionNumber + 1}<span>/${questions.length}</span></p>`;
+const createFooter = function () {
+  let footerNode = document.getElementsByClassName("footer")[0];
+  let newPNode = document.createElement("p");
+  newPNode.innerHTML = `<p>Question ${currentQuestionNumber + 1}<span>/${
+    questions.length
+  }</span></p>`;
   footerNode.appendChild(newPNode);
-}
+};
 
-const createNewQuestion = function(currentQuestionObject) {
-
+const createNewQuestion = function (currentQuestionObject) {
   currentQuestionObject = questions[currentQuestionNumber];
   currentQuestion = currentQuestionObject.question;
 
-  let questionNode = document.getElementsByClassName('question-container')[0];
-  let h2Node = document.createElement('h2');
+  let questionNode = document.getElementsByClassName("question-container")[0];
+  let h2Node = document.createElement("h2");
 
   h2Node.innerText = currentQuestion;
-  h2Node.classList.add('currentQuestion');
   questionNode.appendChild(h2Node);
-}
+};
 
 
 function createAnswers(arrayOfAnswers) {
