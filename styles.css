@@ -266,20 +266,19 @@ button {
   position: relative;
 }
 
-.question-container h2 {
+.question-container h3 {
   color: white;
-  font-size: 40px;
-}
-
-.question-container h2 span {
-  font-weight: bold;
+  font-size: 35px;
+  line-height: 1;
+  font-weight: 100;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .answers-container {
   width: 80%;
   text-align: center;
   margin-inline: auto;
-  margin-top: 20px;
 }
 
 .answers-container div {
@@ -287,8 +286,8 @@ button {
   font-size: 15px;
   width: 20%;
   text-align: center;
-  margin: 20px 40px;
-  padding: 8px 40px;
+  margin: 20px 30px 10px;
+  padding: 20px 40px;
   position: relative;
   box-shadow: -4px -4px 5px -2px #ffffff;
   background-color: rgba(255, 255, 255, 0.118);
@@ -319,8 +318,8 @@ button {
 
 #bottom-container {
   position: absolute;
-  top: 530px;
-  right: 685px;
+  top: 550px;
+  right: 535px;
 }
 
 /* RESULTS PAGE */

@@ -169,7 +169,6 @@ let currentQuestionNumber = 0;
 //2
 
 const createFooter = function () {
-
   let footerNode = document.getElementsByClassName("footer")[0];
   footerNode.innerHTML = "";
   let newPNode = document.createElement("p");
@@ -180,20 +179,20 @@ const createFooter = function () {
 };
 
 const createNewQuestion = function (currentQuestionObject) {
-
   currentQuestionObject = questions[currentQuestionNumber];
   currentQuestion = currentQuestionObject.question;
 
   let questionNode = document.getElementsByClassName("question-container")[0];
   questionNode.innerHTML = "";
-  let h2Node = document.createElement("h2");
+  let h2Node = document.createElement("h3");
 
   h2Node.innerText = currentQuestion;
   questionNode.appendChild(h2Node);
 };
 
 function createAnswers(arrayOfAnswers) {
-  let answersContainer = document.getElementsByClassName('answers-container')[0];
+  let answersContainer =
+    document.getElementsByClassName("answers-container")[0];
   answersContainer.innerHTML = "";
   for (let i = 0; i < arrayOfAnswers.length; i++) {
     let divNode = document.createElement("div");
@@ -203,7 +202,7 @@ function createAnswers(arrayOfAnswers) {
   }
 }
 
-function mergeAnswers (question) {
+function mergeAnswers(question) {
   let allAnswers = question.incorrect_answers;
   allAnswers.push(question.correct_answer);
   if (question.type === "boolean") {
@@ -216,38 +215,19 @@ function mergeAnswers (question) {
       allAnswers[y] = temp;
     }
     createAnswers(allAnswers);
-}
-}
-
-function onClickActions() {
-
-  let currentQuestion = questions[currentQuestionNumber];
-  if (currentQuestionNumber<questions.length) {
-    
-    createFooter();
-    createNewQuestion();
-    mergeAnswers(currentQuestion);
-    currentQuestionNumber++
   }
 }
 
-function buttonClick() {
-  onClickActions();
+function onClickActions() {
+  let currentQuestion = questions[currentQuestionNumber];
+  if (currentQuestionNumber < questions.length) {
+    createFooter();
+    createNewQuestion();
+    mergeAnswers(currentQuestion);
+    currentQuestionNumber++;
+  }
 }
 
-
-
-
-
-
-
-  
-
-
-
-
-
+window.onload = onClickActions();
 
 //3
-
-//window.onload = onLoadActions;
