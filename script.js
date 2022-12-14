@@ -2,7 +2,7 @@ const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "hard",
     question: "What does CPU stand for?",
     correct_answer: "Central Processing Unit",
     incorrect_answers: [
@@ -14,7 +14,7 @@ const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "hard",
     question:
       "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
@@ -40,7 +40,7 @@ const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "hard",
     question:
       "What is the most preferred image format used for logos in the Wikimedia database?",
     correct_answer: ".svg",
@@ -61,7 +61,7 @@ const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "hard",
     question:
       "What is the code name for the mobile operating system Android 7.0?",
     correct_answer: "Nougat",
@@ -86,7 +86,7 @@ const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "hard",
     question:
       "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
