@@ -189,7 +189,7 @@ button {
 
 .elements-container {
   width: 50%;
-  margin-top: 100px;
+  margin-top: 70px;
   margin-inline: auto;
   position: relative;
   text-align: center;
@@ -248,9 +248,6 @@ button {
   margin-top: 5%;
 }
 
-button {
-  font-weight: 300;
-}
 
 /*Questions Page*/
 
