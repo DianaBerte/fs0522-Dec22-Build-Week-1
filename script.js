@@ -131,7 +131,6 @@ const createNewQuestion = function(currentQuestionObject) {
   let h2Node = document.createElement('h2');
 
   h2Node.innerText = currentQuestion;
-  h2Node.classList.add('currentQuestion');
   questionNode.appendChild(h2Node);
 }
 
