@@ -162,7 +162,7 @@ function feedbackChange() {
 
 // ------------------- QUESTION PAGE ------------------- //
 //1
-let userScore= 0;
+let userScore = 0;
 let userAnswer = "";
 let currentQuestionNumber = 0;
 
@@ -188,43 +188,32 @@ const createNewQuestion = function (currentQuestionObject) {
   questionNode.appendChild(h2Node);
 };
 
-
 function createAnswers(arrayOfAnswers) {
-  let answersContainer = document.getElementsByClassName('answers-container')[0];
+  let answersContainer =
+    document.getElementsByClassName("answers-container")[0];
   for (let i = 0; i < arrayOfAnswers.length; i++) {
-    let divNode = document.createElement('div');
-    divNode.type = "button"
-    divNode.innerHTML = `${arrayOfAnswers[i]}`
+    let divNode = document.createElement("div");
+    divNode.type = "button";
+    divNode.innerHTML = `${arrayOfAnswers[i]}`;
     answersContainer.appendChild(divNode);
   }
 }
 
-
-function mergeAnswers (question) {
+function mergeAnswers(question) {
   let allAnswers = question.incorrect_answers;
-    allAnswers.push(question.correct_answer);
-    if (question.type === "boolean"){
-      createAnswers(allAnswers)
-    } else {
+  allAnswers.push(question.correct_answer);
+  if (question.type === "boolean") {
+    createAnswers(allAnswers);
+  } else {
     for (let i = allAnswers.length - 1; i > 0; i--) {
       var y = Math.floor(Math.random() * i);
       var temp = allAnswers[i];
       allAnswers[i] = allAnswers[y];
-      allAnswers[y] = temp;}
+      allAnswers[y] = temp;
     }
+    createAnswers(allAnswers);
+  }
 }
-
-
-
-
-
-
-  
-
-
-
-
-
 
 //3
 
