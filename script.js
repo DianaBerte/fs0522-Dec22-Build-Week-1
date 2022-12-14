@@ -166,10 +166,12 @@ let userScore= 0;
 let userAnswer = "";
 let currentQuestionNumber = 0;
 
-//2: You can create functions to create every line of the html e.g one for the question, one for the question number at footer, one for the answers etc
+//2
 
 const createFooter = function () {
+
   let footerNode = document.getElementsByClassName("footer")[0];
+  footerNode.innerHTML = "";
   let newPNode = document.createElement("p");
   newPNode.innerHTML = `<p>Question ${currentQuestionNumber + 1}<span>/${
     questions.length
@@ -178,19 +180,21 @@ const createFooter = function () {
 };
 
 const createNewQuestion = function (currentQuestionObject) {
+
   currentQuestionObject = questions[currentQuestionNumber];
   currentQuestion = currentQuestionObject.question;
 
   let questionNode = document.getElementsByClassName("question-container")[0];
+  questionNode.innerHTML = "";
   let h2Node = document.createElement("h2");
 
   h2Node.innerText = currentQuestion;
   questionNode.appendChild(h2Node);
 };
 
-
 function createAnswers(arrayOfAnswers) {
   let answersContainer = document.getElementsByClassName('answers-container')[0];
+  answersContainer.innerHTML = "";
   for (let i = 0; i < arrayOfAnswers.length; i++) {
     let divNode = document.createElement('div');
     divNode.type = "button"
@@ -198,7 +202,6 @@ function createAnswers(arrayOfAnswers) {
     answersContainer.appendChild(divNode);
   }
 }
-
 
 function mergeAnswers (question) {
   let allAnswers = question.incorrect_answers;
@@ -212,7 +215,25 @@ function mergeAnswers (question) {
       allAnswers[i] = allAnswers[y];
       allAnswers[y] = temp;}
     }
+    createAnswers(allAnswers);
 }
+
+function onClickActions() {
+
+  let currentQuestion = questions[currentQuestionNumber];
+  if (currentQuestionNumber<questions.length) {
+    
+    createFooter();
+    createNewQuestion();
+    mergeAnswers(currentQuestion);
+    currentQuestionNumber++
+  }
+}
+
+function buttonClick() {
+  onClickActions();
+}
+
 
 
 
