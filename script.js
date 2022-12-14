@@ -94,20 +94,34 @@ const questions = [
   },
 ];
 
+function promiseCheck() {
+  let promiseBox = document.getElementById("checkbox");
+  if (promiseBox.checked) {
+    let aNode = document.querySelector(".button a");
+    aNode.href = "question-page.html";
+  } else {
+    let labelNode = document.getElementsByTagName("label")[0];
+    labelNode.innerText =
+      "* I promise to answer myself without help from anyone";
+    labelNode.style.color = "red";
+    labelNode.style.textDecoration = "underline";
+  }
+}
+
 //1
 
 let currentQuestionNumber = 0;
 
 //2: You can create functions to create every line of the html e.g one for the question, one for the question number at footer, one for the answers etc
 
-const createFooter = function() {
-  let footerNode = document.getElementsByClassName('footer')[0];
-  let newPNode = document.createElement('p');
-  newPNode.innerText = `Question ${currentQuestionNumber+1}/${questions.length}`;
+const createFooter = function () {
+  let footerNode = document.getElementsByClassName("footer")[0];
+  let newPNode = document.createElement("p");
+  newPNode.innerText = `Question ${currentQuestionNumber + 1}/${
+    questions.length
+  }`;
   footerNode.appendChild(newPNode);
-}
-
-
+};
 
 //3
 
