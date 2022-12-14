@@ -146,6 +146,9 @@ function feedbackChange() {
       let aNode = document.getElementsByTagName("a")[0];
       aNode.href = "https://epicode.com/en/";
     }
+  } else {
+    feedbackInputNode.placeholder = "* Please write a comment here";
+    feedbackInputNode.classList.add("change-color");
   }
 }
 
@@ -156,25 +159,25 @@ let currentQuestionNumber = 0;
 
 //2: You can create functions to create every line of the html e.g one for the question, one for the question number at footer, one for the answers etc
 
-const createFooter = function() {
-
-  let footerNode = document.getElementsByClassName('footer')[0];
-  let newPNode = document.createElement('p');
-  newPNode.innerHTML = `<p>Question ${currentQuestionNumber + 1}<span>/${questions.length}</span></p>`;
+const createFooter = function () {
+  let footerNode = document.getElementsByClassName("footer")[0];
+  let newPNode = document.createElement("p");
+  newPNode.innerHTML = `<p>Question ${currentQuestionNumber + 1}<span>/${
+    questions.length
+  }</span></p>`;
   footerNode.appendChild(newPNode);
-}
+};
 
-const createNewQuestion = function(currentQuestionObject) {
-
+const createNewQuestion = function (currentQuestionObject) {
   currentQuestionObject = questions[currentQuestionNumber];
   currentQuestion = currentQuestionObject.question;
 
-  let questionNode = document.getElementsByClassName('question-container')[0];
-  let h2Node = document.createElement('h2');
+  let questionNode = document.getElementsByClassName("question-container")[0];
+  let h2Node = document.createElement("h2");
 
   h2Node.innerText = currentQuestion;
   questionNode.appendChild(h2Node);
-}
+};
 
 //3
 

@@ -243,6 +243,10 @@ button {
   font-family: inherit;
 }
 
+.change-color::-webkit-input-placeholder {
+  color: #d20094
+}
+
 .button-section {
   text-align: center;
   margin-top: 5%;
