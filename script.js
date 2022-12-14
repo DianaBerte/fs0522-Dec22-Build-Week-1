@@ -217,6 +217,7 @@ function mergeAnswers (question) {
     }
     createAnswers(allAnswers);
 }
+}
 
 function onClickActions() {
 
