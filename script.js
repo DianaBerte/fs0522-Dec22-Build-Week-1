@@ -133,15 +133,23 @@ function feedbackChange() {
         "<h2>About your Teacher</h2><h3>From 0 to 10, how do you rate him/her?</h3>";
       generateStars();
       document.getElementsByClassName("leave-us-feedback")[0].innerHTML = "";
-      document.getElementsByClassName("text-input-container")[0].innerHTML = "";
+      document
+        .getElementsByClassName("main-container")[0]
+        .removeChild(
+          document.getElementsByClassName("text-input-container")[0]
+        );
     } else if (click === 2) {
       titleContainerNode.innerHTML =
         "<h2>About your TA</h2><h3>From 0 to 10, how do you rate him/her?</h3>";
       generateStars();
-      document.getElementsByClassName("leave-us-feedback")[0].innerHTML = "";
-      document.getElementsByClassName("text-input-container")[0].innerHTML = "";
       let buttonNode = document.getElementById("feedback-button");
       buttonNode.innerHTML = "<b>MORE INFO</b>";
+      document.getElementsByClassName("leave-us-feedback")[0].innerHTML = "";
+      document
+        .getElementsByClassName("main-container")[0]
+        .removeChild(
+          document.getElementsByClassName("text-input-container")[0]
+        );
     } else if (click === 3) {
       let aNode = document.getElementsByTagName("a")[0];
       aNode.href = "https://epicode.com/en/";
