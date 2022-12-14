@@ -105,7 +105,7 @@ function promiseCheck() {
     let labelNode = document.getElementsByTagName("label")[0];
     labelNode.innerText =
       "* I promise to answer myself without help from anyone";
-    labelNode.style.color = "red";
+    labelNode.style.color = "#D20094";
     labelNode.style.textDecoration = "underline";
   }
 }
