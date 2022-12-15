@@ -295,6 +295,9 @@ button {
   cursor: pointer;
 }
 
+.answers-container div:hover {
+  background-color: #d2009399;
+}
 
 .button-next {
   text-align: center;
@@ -320,6 +323,10 @@ button {
   position: absolute;
   top: 550px;
   right: 535px;
+}
+
+div.selected {
+  background-color: #d2009399;
 }
 
 /* RESULTS PAGE */
@@ -357,8 +364,6 @@ button {
   top: 300px;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: conic-gradient(#d20094 0deg 120deg,
-      #00ffff 120deg 360deg);
   box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
 }
 
@@ -442,10 +447,15 @@ button {
   margin-top: 0;
 }
 
+p.not-passed {
+  margin-top: 390px;
+  margin-left: 435px;
+}
+
 .results-button {
   position: absolute;
-  top: 600px;
-  left: 495px;
+  top: 640px;
+  left: 655px;
 }
 
 .results-button #rate-button {
