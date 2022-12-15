@@ -75,7 +75,7 @@ button {
 
 #btn:hover {
   box-shadow: 0px 0px 39px -6px rgba(0, 255, 255, 1);
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 #checkbox {
@@ -256,10 +256,11 @@ button {
   text-align: center;
   margin-top: 5%;
 }
-#feedback-button:hover{
+
+#feedback-button:hover {
   box-shadow: 0px 0px 39px -6px rgba(0, 255, 255, 1);
   cursor: pointer;
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 
@@ -283,6 +284,8 @@ button {
   font-weight: 100;
   margin-top: 0;
   margin-bottom: 0;
+  width: 80%;
+  margin-inline: auto;
 }
 
 .answers-container {
@@ -316,10 +319,10 @@ button {
   margin-top: 5%;
 }
 
-#btn-a:hover{
+#btn-a:hover {
   box-shadow: 0px 0px 39px -6px rgba(0, 255, 255, 1);
   cursor: pointer;
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 .footer {
@@ -467,13 +470,13 @@ div.selected {
 
 p.not-passed {
   margin-top: 390px;
-  margin-left: 435px;
+  margin-left: 450px;
 }
 
 .results-button {
   position: absolute;
   top: 640px;
-  left: 655px;
+  left: 645px;
 }
 
 .results-button #rate-button {
@@ -488,4 +491,76 @@ p.not-passed {
 #rate-button:hover {
   box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
   background-color: #00ffff;
+}
+
+/* TIMER  */
+
+.base-timer {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 150px;
+  height: 150px;
+}
+
+.base-timer__svg {
+  transform: scaleX(1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.blue {
+  color: #00FFFF;
+}
+
+.base-timer__path-remaining.pink {
+  color: #D20094;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.seconds-text {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.remaining-text {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 90px;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
 }
