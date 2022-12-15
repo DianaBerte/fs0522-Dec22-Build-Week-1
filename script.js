@@ -142,8 +142,6 @@ function feedbackChange() {
       titleContainerNode.innerHTML =
         "<h2>About your TA</h2><h3>From 0 to 10, how do you rate him/her?</h3>";
       generateStars();
-      let buttonNode = document.getElementById("feedback-button");
-      buttonNode.innerHTML = "<b>MORE INFO</b>";
       document.getElementsByClassName("leave-us-feedback")[0].innerHTML = "";
       document
         .getElementsByClassName("main-container")[0]
@@ -152,7 +150,7 @@ function feedbackChange() {
         );
     } else if (click === 3) {
       let aNode = document.getElementsByTagName("a")[0];
-      aNode.href = "https://epicode.com/en/";
+      aNode.href = "welcome-page.html";
     }
   } else {
     feedbackInputNode.placeholder = "* Please write a comment here";
@@ -231,6 +229,13 @@ function mergeAnswers(question) {
     createAnswers(allAnswers);
   }
 }
+function createTimer(question) {
+  if (question.difficulty === "hard") {
+    timer(30);
+  } else {
+    timer(20);
+  }
+}
 
 function onClickActions() {
   let currentQuestion = questions[currentQuestionNumber];
@@ -239,14 +244,16 @@ function onClickActions() {
     buttonDivNode.innerHTML =
       "<a href = 'results-page.html'><button onclick='onClickActions()'><b>NEXT</b></button></a>";
   }
-
   if (currentQuestionNumber < questions.length) {
+    createTimer(currentQuestion);
     createFooter();
     createNewQuestion(currentQuestion);
     mergeAnswers(currentQuestion);
     currentQuestionNumber++;
+    console.log(userScore);
   } else {
     localStorage.setItem("userScore", userScore);
+    window.location = "results-page.html";
   }
 }
 
@@ -265,16 +272,15 @@ function passOrNot(percentage) {
   } else {
     let notPassedTetxt = document.getElementsByClassName("not-passed")[0];
     chartTextNode.innerHTML = "";
-    notPassedTetxt.innerText =
-      "Oh no! Unfortunately you did not pass this one.";
+    notPassedTetxt.innerText = "Oh no! Unfortunately you didn't pass this one.";
   }
 }
 
 function buildChart(percentage) {
   let chartNode = document.getElementById("chart");
   let degree = ((100 - percentage) * 36) / 10;
-  console.log(degree);
-  if (degree === 0) {
+
+  if (percentage === 0) {
     chartNode.style.background = `conic-gradient( #d20094 0deg 360deg)`;
   } else {
     chartNode.style.background = `conic-gradient( #d20094 0deg ${degree}deg, #00ffff ${degree}deg 360deg)`;
@@ -283,6 +289,7 @@ function buildChart(percentage) {
 
 function showResults() {
   let correctNumber = localStorage.getItem("userScore");
+  console.log(correctNumber);
   let correctNode = document.getElementsByClassName("percentage")[0];
   let wrongNode = document.getElementsByClassName("percentage")[1];
   let correctPercentage =
@@ -304,4 +311,110 @@ let resultsPath = window.location.pathname;
 let resultsPage = resultsPath.split("/").pop();
 if (resultsPage == "results-page.html") {
   window.onload = showResults;
+}
+
+// ------------------- TIMER ------------------- //
+
+function timer(timeLimit) {
+  let FULL_DASH_ARRAY = 283;
+  let WARNING_THRESHOLD = 10;
+
+  let COLOR_CODES = {
+    info: {
+      color: "blue",
+    },
+    warning: {
+      color: "pink",
+      threshold: WARNING_THRESHOLD,
+    },
+  };
+
+  let TIME_LIMIT = timeLimit;
+  let timePassed = 0;
+  let timeLeft = TIME_LIMIT;
+  let timerInterval = null;
+  let remainingPathColor = COLOR_CODES.info.color;
+
+  document.getElementById("app").innerHTML = `
+<div class="base-timer">
+  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g class="base-timer__circle">
+      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+      <path
+        id="base-timer-path-remaining"
+        stroke-dasharray="283"
+        class="base-timer__path-remaining ${remainingPathColor}"
+        d="
+          M 50, 50
+          m -45, 0
+          a 45,45 0 1,0 90,0
+          a 45,45 0 1,0 -90,0
+        "
+      ></path>
+    </g>
+  </svg>
+  <p class = "seconds-text">SECONDS</p>
+  <span id="base-timer-label" class="base-timer__label">
+  ${formatTime(timeLeft)}</span>
+  <p class = "remaining-text">REMAINING</p>
+</div>
+`;
+
+  timerInterval = setInterval(startTimer, 1000);
+
+  function pause() {
+    clearInterval(timerInterval);
+  }
+
+  document
+    .querySelector(".button-next button")
+    .addEventListener("click", pause);
+
+  function startTimer() {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    document.getElementById("base-timer-label").innerHTML =
+      formatTime(timeLeft);
+    setCircleDasharray();
+    setRemainingPathColor(timeLeft);
+    if (timeLeft === 0) {
+      clearInterval(timerInterval);
+      onClickActions();
+    }
+  }
+
+  function formatTime(time) {
+    let seconds = time;
+    if (seconds < 10) {
+      seconds = `0${time}`;
+    }
+
+    return `${seconds}`;
+  }
+
+  function setRemainingPathColor(timeLeft) {
+    let { warning, info } = COLOR_CODES;
+    if (timeLeft <= warning.threshold) {
+      document
+        .getElementById("base-timer-path-remaining")
+        .classList.remove(info.color);
+      document
+        .getElementById("base-timer-path-remaining")
+        .classList.add(warning.color);
+    }
+  }
+
+  function calculateTimeFraction() {
+    let rawTimeFraction = timeLeft / TIME_LIMIT;
+    return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+  }
+
+  function setCircleDasharray() {
+    let circleDasharray = `${(
+      calculateTimeFraction() * FULL_DASH_ARRAY
+    ).toFixed(0)} 283`;
+    document
+      .getElementById("base-timer-path-remaining")
+      .setAttribute("stroke-dasharray", circleDasharray);
+  }
 }
