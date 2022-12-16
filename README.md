@@ -3,13 +3,13 @@
 #### Team members:
 
 1. Diana Berte'
-2. Lydia Karapa
+2. Lydia Karapatsakidi
 3. Zaide Kurti
 
 #### Main goal:
 
 Create a copy of the EPICODE Benchmark interface
-as close as possible to the original..
+as close as possible to the original.
 
 #### Requirements:
 
@@ -35,7 +35,7 @@ as close as possible to the original..
   - user gets 1 point for each correct answer.
   - user can skip questions, but they will be scored 0.
   - when the timer is 0, the question will be automatically skipped,
-    but scoring the user, 0 if no answer or wrong answer is clicked
+    but scoring the user 0 if no answer or wrong answer is clicked,
     or 1 if the answer clicked is correct.
   - after the last question, user will be redirected to their results.
 - **Results Page:**
