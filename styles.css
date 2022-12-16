@@ -57,7 +57,7 @@ ul {
 
 .button {
   position: absolute;
-  top: 560px;
+  top: 550px;
   right: 200px;
 }
 
@@ -66,16 +66,15 @@ button {
   font-family: Outfit;
   padding: 15px 50px;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: bold;
   border: none;
   background-color: #00ffff;
   cursor: pointer;
-
+  box-shadow: 0px 0px 30px -6px rgba(0, 255, 255, 1);
 }
 
 #btn:hover {
   box-shadow: 0px 0px 39px -6px rgba(0, 255, 255, 1);
-  transform: scale(1.1);
 }
 
 #checkbox {
@@ -260,7 +259,6 @@ button {
 #feedback-button:hover {
   box-shadow: 0px 0px 39px -6px rgba(0, 255, 255, 1);
   cursor: pointer;
-  transform: scale(1.1);
 }
 
 
@@ -271,7 +269,7 @@ button {
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 10%;
+  margin-top: 7%;
   margin-bottom: 6%;
   margin-inline: auto;
   position: relative;
@@ -279,7 +277,7 @@ button {
 
 .question-container h3 {
   color: white;
-  font-size: 35px;
+  font-size: 37px;
   line-height: 1;
   font-weight: 100;
   margin-top: 0;
@@ -296,7 +294,7 @@ button {
 
 .answers-container div {
   display: inline-block;
-  font-size: 15px;
+  font-size: 17px;
   width: 20%;
   text-align: center;
   margin: 20px 30px 10px;
@@ -321,8 +319,6 @@ button {
 
 #btn-a:hover {
   box-shadow: 0px 0px 39px -6px rgba(0, 255, 255, 1);
-  cursor: pointer;
-  transform: scale(1.1);
 }
 
 .footer {
@@ -354,6 +350,7 @@ div.selected {
 
 .results-container {
   position: relative;
+  bottom: 20px;
   text-align: center;
 }
 
@@ -394,7 +391,6 @@ div.selected {
   position: absolute;
   width: 230px;
   height: 230px;
-  /* background: rgb(11, 17, 59); */
   background-image: url("assets/result.jpg");
   background-size: cover;
   border-radius: 50%;
@@ -475,8 +471,8 @@ p.not-passed {
 
 .results-button {
   position: absolute;
-  top: 640px;
-  left: 645px;
+  top: 630px;
+  left: 640px;
 }
 
 .results-button #rate-button {

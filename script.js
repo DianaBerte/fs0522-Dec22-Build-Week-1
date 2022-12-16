@@ -250,7 +250,6 @@ function onClickActions() {
     createNewQuestion(currentQuestion);
     mergeAnswers(currentQuestion);
     currentQuestionNumber++;
-    console.log(userScore);
   } else {
     localStorage.setItem("userScore", userScore);
     window.location = "results-page.html";
@@ -289,7 +288,6 @@ function buildChart(percentage) {
 
 function showResults() {
   let correctNumber = localStorage.getItem("userScore");
-  console.log(correctNumber);
   let correctNode = document.getElementsByClassName("percentage")[0];
   let wrongNode = document.getElementsByClassName("percentage")[1];
   let correctPercentage =
